@@ -1,0 +1,77 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: etcd
+  namespace: demo1
+  labels:
+    kubernetes.io/cluster-service: "true"
+    name: etcd
+    app: etcd
+spec:
+  selector:
+    app: etcd
+  ports:
+    - name: client1
+      port: 2379
+    - name: client2
+      port: 4001
+    - name: peer
+      port: 2380
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: etcd1
+  namespace: demo1
+  labels:
+    kubernetes.io/cluster-service: "true"
+    name: etcd1
+spec:
+  selector:
+    name: etcd1
+  ports:
+    - name: client1
+      port: 2379
+    - name: client2
+      port: 4001
+    - name: peer
+      port: 2380
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: etcd2
+  namespace: demo1
+  labels:
+    kubernetes.io/cluster-service: "true"
+    name: etcd2
+spec:
+  selector:
+    name: etcd2
+  ports:
+    - name: client1
+      port: 2379
+    - name: client2
+      port: 4001
+    - name: peer
+      port: 2380
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: etcd3
+  namespace: demo1
+  labels:
+    kubernetes.io/cluster-service: "true"
+    name: etcd3
+spec:
+  selector:
+    name: etcd3
+  ports:
+    - name: client1
+      port: 2379
+    - name: client2
+      port: 4001
+    - name: peer
+      port: 2380

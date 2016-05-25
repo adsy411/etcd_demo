@@ -1,0 +1,26 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: etcd1
+  namespace: demo2
+data:
+  initialclusterstate: new
+---
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: etcd2
+  namespace: demo2
+data:
+  initialclusterstate: new
+---
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: etcd3
+  namespace: demo2
+data:
+  initialclusterstate: new
+---
